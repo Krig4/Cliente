@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <noscript>
+        <p>Bienvenido a Mi Sitio</p>
+        <p>La página que estás viendo requiere para su funcionamiento el uso de JavaScript.
+            Si lo has deshabilitado intencionadamente, por favor vuelve a activarlo.</p>
+    </noscript>
+    <script>
+        var numero1 = 5;
+        var numero2 = 8;
+        if (numero1 < numero2) {
+            alert("numero1 no es mayor que numero2");
+        }
+        if (numero2 > 0) {
+            alert("numero2 es positivo");
+        }
+        if (numero1 < 0 || numero1 == 0) {
+            alert("numero1 es negativo o distinto de cero");
+        }
+        if (numero1 + 1 < numero2) {
+            alert("Incrementar en 1 unidad el valor de numero1 no lo hace mayor o igual que numero2");
+        }
+    </script>
+    <script>
+        let factorial = parseInt(prompt("Introduce un número para saber su factorial"));
+        for (let i = 2; i <= numero; i++) {
+            factorial *= i;
+        }
+    </script>
+    <script>
+        let suma = 0;
+        while (suma < 1000) {
+            const numeroAleatorio = parseInt(Math.random() * 100) + 1;
+            suma += numeroAleatorio;
+            console.log(`Suma parcial: ${suma}`);
+        }
+        console.log(`Suma final: ${suma}`);
+    </script>
+    <script>
+        for (let i = 0; i < 10; i++) {
+            console.log(`Número actual: ${i}`);
+            const respuesta = prompt("¿Desea continuar? (Escriba 'no' para salir)");
+            if (respuesta && respuesta.toLowerCase() === "no") {
+                console.log("Saliendo del bucle...");
+                break;
+            }
+        }
+    </script>
+    <script>
+        var multiplicando = 1;
+        var multiplicador = 1;
+        document.write("Tablas con ciclo for en JavaScript");
+        for (multiplicando = 1; multiplicando <= 10; multiplicando++) {
+            for (multiplicador = 1; multiplicador <= 10; multiplicador++) {
+                var resultado = multiplicando * multiplicador;
+                document.write("<dd>");
+                document.write(multiplicando + " X " + multiplicador + " = " + resultado);
+                document.write("</dd>");
+            }
+            document.write('<br>');
+        }
+    </script>
+    <script>
+        let encabezado = 1;
+        for (let i = 1; i <= 6; i++) {
+            document.write("<H" + encabezado + ">Encabezado de nivel" + encabezado + "</H" + encabezado + ">");
+            encabezado++;
+        }
+    </script>
+    <script>
+        var diaDeLaSemana = parseInt(prompt("Introduce un número para saber dia de la semana"));
+        switch (diaDeLaSemana) {
+            case 1:
+                console.log("Hoy es lunes.");
+                break;
+            case 2:
+                console.log("Hoy es martes.");
+                break;
+            case 3:
+                console.log("Hoy es miércoles.");
+                break;
+            case 4:
+                console.log("Hoy es jueves.");
+                break;
+            case 5:
+                console.log("Hoy es viernes.");
+                break;
+            case 6:
+            case 7:
+                console.log("Es fin de semana.");
+                break;
+            default:
+                console.log("Ese día no existe.");
+                break;
+        }
+    </script>
+    <script>
+        var credito = 1000;
+        var carrito = [];
+        function realizarCompra(articulo, precio) {
+            if (precio <= credito) {
+                carrito.push(articulo);
+                credito -= precio;
+
+                alert("Compra realizada con éxito.\nSu carrito contiene: " + carrito.join(", ") + "\nCrédito restante: " + credito + " Euros");
+            } else {
+                alert("No tiene suficiente crédito para comprar " + articulo + ".\nCrédito disponible: " + credito + " Euros");
+            }
+        }
+        realizarCompra("Producto 1", 200);
+        realizarCompra("Producto 2", 300);
+        realizarCompra("Producto 3", 400);
+        realizarCompra("Producto 4", 100);
+        realizarCompra("Producto 5", 1500);
+
+    </script>
+</body>
+
+</html>

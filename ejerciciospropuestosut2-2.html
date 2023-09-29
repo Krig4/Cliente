@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script LANGUAGE="Javascript">
+        function intro() { // Función para ir metiendo intros en función de la necesidad.
+            document.write("<br>");
+        }
+        var precioOrdenador, nombre;
+        precioOrdenador = 150000;
+        //Calcular el 16% del precio del ordenador y mostar por pantalla
+        document.write("El precio del ordenador " + (precioOrdenador * 0.16) + " euros<br>");
+        //Mostrar una expresión lógica con operadores de comparación cuyo resultado sea True
+        document.write(5 < 10);
+        //Mostrar una expresión lógica con operadores de comparación cuyo resultado sea False
+        document.write(5 > 10);
+        //Mostrar una expresión lógica con operadores lógicos cuyo resultado sea True
+        var ordenador = 17000;
+        if (ordenador = precioOrdenador) {
+            document.write("<br/>False");
+        }
+        //Mostrar una expresión lógica con operadores lógicos cuyo resultado sea False
+        var ordenador = 15000;
+        if (ordenador = precioOrdenador) {
+            document.write("<br/>True");
+        }
+        // Pedir el nombre de un animal por pantalla
+        var nombreAnimal = prompt("Por favor, ingresa el nombre de un animal:");
+        // Mostrar el tipo de variable en la que se almacenó el dato
+        document.write("<br>El nombre del animal se almacenó en una variable de tipo: " + typeof nombreAnimal);
+        // Mostrar el precio de un ordenador (sólo como ejemplo)
+        var precioOrdenador = 1000;
+        document.write("<br>El precio del ordenador es: " + precioOrdenador + "<br>");
+        // Escribe los números pares de 0 a 30
+        for (let index = 0; index < 31; index++) {
+            if (index % 2 == 0) {
+                document.write("\n" + index);
+            }
+        }
+        // Escribe las potencias de 2 hasta 3000.
+        var limite = 3000;
+        var potencia = 1;
+        while (potencia <= limite) {
+            document.write("<br>\n" + potencia);
+            potencia *= 2;
+        }
+        // Pide una clave de acceso hasta que se corresponda con una dada (codificarlos con while).
+        var introduce = prompt("Introduce contraseña para acceder");
+        const contrasena = "1234";
+        while (introduce != contrasena) {
+            introduce = prompt("Contraseña erronea, introduce contraseña para acceder");
+        }
+        // Variación del anterior pida la password y permitir tres respuestas incorrectas.
+        const claveCorrecta = "5678";
+        let claveIngresada = "";
+        let intentosIncorrectos = 0;
+        while (claveIngresada !== claveCorrecta && intentosIncorrectos < 3) {
+            claveIngresada = prompt("Por favor, ingresa tu clave de acceso:");
+            if (claveIngresada === claveCorrecta) {
+                alert("¡Clave correcta! Acceso permitido.");
+                break;
+            } else {
+                alert("Clave incorrecta. Inténtalo nuevamente.");
+                intentosIncorrectos++;
+            }
+        }
+        if (intentosIncorrectos === 3) {
+            alert("Has agotado tus tres intentos. Acceso denegado.");
+        } else {
+            console.log("Continuación del programa después de ingresar la clave correcta.");
+        }
+        // Presenta todos los números pares del 0 al 50 excepto los que sean múltiplos de 3 (pista usar for y continue).
+        intro();
+        for (let index = 0; index < 50; index++) {
+            if (index % 3 == 0) {
+                continue;
+            } else {
+                document.write("\n" + index);
+            }
+        }
+        // Mostar la versión de JavaScript que admite nuestro navegador (pista sólo ejecutará el script de la versión que admite).
+        if (typeof navigator !== 'undefined' && typeof navigator.userAgent === 'string') {
+            if (navigator.userAgent.includes('Edge')) {
+                alert('Tu navegador es Microsoft Edge y admite ES6.');
+            } else if (navigator.userAgent.includes('Firefox')) {
+                alert('Tu navegador es Firefox y admite ES6.');
+            } else if (navigator.userAgent.includes('Chrome')) {
+                alert('Tu navegador es Chrome y admite ES6.');
+            } else if (navigator.userAgent.includes('Safari')) {
+                alert('Tu navegador es Safari y admite ES6.');
+            } else if (navigator.userAgent.includes('Opera')) {
+                alert('Tu navegador es Opera y admite ES6.');
+            } else {
+                alert('No se pudo determinar el navegador o la compatibilidad con ES6.');
+            }
+        } else {
+            alert('No se pudo determinar la compatibilidad con ES6 en tu navegador.');
+        }
+        // Se introducen tres notas de un alumno, si la nota media es mayor o igual a cinco mostrar el mensaje 'Promociona'. 
+        var nota1 = parseInt(prompt("Introduce primera nota del alumno"));
+        var nota2 = parseInt(prompt("Introduce segunda nota del alumno"));
+        var nota3 = parseInt(prompt("Introduce tercera nota del alumno"));
+        var promedio = (nota1 + nota2 + nota3) / 3;
+        if (promedio >= 5) {
+            document.write("<br>PROMOCIONA");
+        } else {
+            document.write("<br>No promociona");
+        }
+        // Se introduce  por teclado un número positivo de uno o dos dígitos (1..99) mostrar un mensaje indicando si el número tiene uno o dos dígitos 
+        document.write("<br>");
+        var numero = parseInt(prompt("Introduce un número del 1 al 99"));
+        if (numero >= 10) {
+            document.write("El número es de dos cifras");
+        } else {
+            document.write("El número es de una cifra");
+        }
+        // Se pide confeccionar un programa que pida los datos del demandante e informe del newSueldo del mismo según el porcentaje de respuestas correctas que ha obtenido.
+        document.write("<br>");
+        const nombreDemandante = prompt("Ingrese el nombre del demandante:");
+        const respuestasCorrectas = parseInt(prompt("Ingrese la cantidad de respuestas correctas:"));
+        const totalPreguntas = parseInt(prompt("Ingrese el total de preguntas realizadas:"));
+        const porcentajeCorrectas = (respuestasCorrectas / totalPreguntas) * 100;
+        let nivel = "";
+        if (porcentajeCorrectas >= 90) {
+            nivel = "Alto";
+        } else if (porcentajeCorrectas >= 75 && porcentajeCorrectas < 90) {
+            nivel = "Medio";
+        } else if (porcentajeCorrectas >= 50 && porcentajeCorrectas < 75) {
+            nivel = "Regular";
+        } else {
+            nivel = "Fuera de nivel";
+        }
+        document.write("Nombre del demandante:" + nombreDemandante + "<br>Porcentaje de respuestas correctas:" + porcentajeCorrectas + "<br>newSueldo del demandante:" + nivel);
+        // Realizar un programa que pida una fecha cualquiera, luego verificar si dicha fecha corresponde a Navidad.
+        var fecha = prompt("Introduce una fecha (dd/mm/)");
+        if(fecha.indexOf("25/12" != -1)){
+            alert("ES NAVIDAD");
+        } else{
+            alert("No es Navidad");
+        }
+        // Escribir un programa que pida la coordenada de un punto en el plano, es decir dos valores enteros x e y. Posteriormente imprimir en pantalla en qué cuadrante se ubica dicho punto
+
+        // De un operario se conoce su sueldo y los años de antigüedad. Se pide confeccionar un programa que lea los datos de entrada e informe
+        document.write("<br>");
+        const nombreTrabajador = prompt("Ingrese el nombre del trabajador:");
+        const sueldo = parseInt(prompt("Ingrese el sueldo del trabajador:"));
+        const antiguedad = parseInt(prompt("Ingrese sus años de antigüedad:"));
+        let newSueldo = "";
+        if (sueldo < 500 && antiguedad >= 10) {
+            newSueldo = sueldo * 1.20;
+        } else if (sueldo < 500 && antiguedad < 10) {
+            newSueldo = sueldo * 1.05;
+        } else if (sueldo >= 500) {
+            newSueldo = sueldo;
+        }
+        document.write("Nombre del trabajador:" + nombreTrabajador + "<br>Su sueldo anterior era:" + sueldo + "<br>Su nuevo sueldo es:" + newSueldo);
+        // Pedir por teclado el nombre de un color (rojo, verde o azul), luego rellenar el fondo de la ventana con dicho color.
+        document.write("<br>");
+        const color = prompt('Ingresa un color (rojo, verde o azul):').toLowerCase();
+        const body = document.body;
+        switch (color) {
+            case 'rojo':
+                body.style.backgroundColor = 'red';
+                break;
+            case 'verde':
+                body.style.backgroundColor = 'green';
+                break;
+            case 'azul':
+                body.style.backgroundColor = 'blue';
+                break;
+            default:
+                alert('Color no válido. Por favor, ingresa rojo, verde o azul.');
+        }
+        // Pedir la introducción de alguna de estas palabras (casa, mesa, perro, gato) luego mostrar la palabra traducida en inglés.
+        document.write("<br>");
+        const palabra = prompt('Ingresa un color (casa, mesa, perro, gato):').toLowerCase();
+        switch (palabra) {
+            case 'casa':
+                document.write("<br>House");
+                break;
+            case 'mesa':
+                document.write("<br>Table");
+                break;
+            case 'perro':
+                document.write("<br>Dog");
+                break;
+            case 'gato':
+                document.write("<br>Cat");
+                break;
+            default:
+                alert('Palabra no válida. Por favor, ingresa casa, mesa, perro, gato.');
+        }
+        // En un banco se procesan datos de las cuentas corrientes de sus clientes
+        document.write("<br>");
+        let sumaSaldosAcreedores = 0;
+        while (true) {
+            const numeroCuenta = prompt('Ingrese el número de cuenta (o un valor negativo para finalizar):');
+            const numeroCuentaEntero = parseInt(numeroCuenta);
+            if (isNaN(numeroCuentaEntero)) {
+                alert('Por favor, ingrese un número válido.');
+                continue; // Continuar el bucle si la entrada no es un número válido
+            }
+            if (numeroCuentaEntero < 0) {
+                break;
+            }
+            const nombreCliente = prompt('Ingrese el nombre del cliente:');
+            const saldoActual = parseFloat(prompt('Ingrese el saldo actual:'));
+            let estadoCuenta;
+            if (saldoActual > 0) {
+                estadoCuenta = 'Acreedor';
+                sumaSaldosAcreedores += saldoActual;
+            } else if (saldoActual < 0) {
+                estadoCuenta = 'Deudor';
+            } else {
+                estadoCuenta = 'Nulo';
+            }
+            document.write('Número de cuenta: ' + numeroCuentaEntero + '<br>');
+            document.write('Nombre del cliente: ' + nombreCliente + '<br>');
+            document.write('Estado de la cuenta: ' + estadoCuenta + '<br>');
+        }
+        document.write('Suma total de saldos acreedores: ' + sumaSaldosAcreedores);
+        // Se realizó un censo local y se desea procesar la información obtenida en dicho censo.
+        document.write("<br>");
+        let totalPersonas = 0;
+        let cantidadVarones = 0;
+        let cantidadMujeres = 0;
+        let varonesEdadEntre18y67 = 0;
+        while (true) {
+            const numeroDocumento = prompt('Ingrese el número de documento (o 0 para finalizar):');
+            const numeroDocumentoEntero = parseInt(numeroDocumento);
+            if (numeroDocumentoEntero === 0) {
+                break;
+            }
+            const edad = parseInt(prompt('Ingrese la edad:'));
+            const sexo = prompt('Ingrese el sexo (femenino o masculino):');
+            totalPersonas++;
+            if (sexo === 'masculino') {
+                cantidadVarones++;
+                if (edad >= 18 && edad <= 67) {
+                    varonesEdadEntre18y67++;
+                }
+            } else if (sexo === 'femenino') {
+                cantidadMujeres++;
+            } else {
+                document.write('El sexo ingresado no es válido. Por favor, ingrese "femenino" o "masculino".<br>');
+            }
+        }
+        document.write(`Cantidad total de personas censadas: ${totalPersonas}<br>`);
+        document.write(`Cantidad de varones: ${cantidadVarones}<br>`);
+        document.write(`Cantidad de mujeres: ${cantidadMujeres}<br>`);
+        document.write(`Cantidad de varones cuya edad varía entre 18 y 67 años: ${varonesEdadEntre18y67}<br>`);
+    </script>
+</body>
+
+</html>
