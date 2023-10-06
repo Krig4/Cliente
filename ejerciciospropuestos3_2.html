@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios Propuestos 3.2</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // Realizar el ejercicio de la tabla de multiplicar de manera que ahora se pida el número de la tabla a mostrar.
+        var multiplicar = prompt("Introduce el número que quieras ver la tabla de multiplicar");
+        for (let index = 0; index <= 10; index++) {
+            var solucion = multiplicar * index;
+            document.write(multiplicar + " x " + index + " = " + solucion + "<br>");
+        }
+        // Vamos a realizar una práctica con ventanas del tipo prompt y alert que nos va a servir para un tema actual, que es el cálculo del valor del pago del préstamo de una hipoteca que supuestamente nos ha concedido un banco.
+        var numeroAnyos, prestamo, interesAnual, pagoMensual, interes;
+        numeroAnyos = parseInt(prompt("Introduce el numero de años del prestamo"));
+        interesAnual = parseInt(prompt("Introduce el interes anual"));
+        interes = interesAnual / 1200;
+        prestamo = parseFloat(prompt("Introduce el valor del prestamo"));
+        pagoMensual = (prestamo * interes) / (1 - Math.pow((1 + interes), -(numeroAnyos * 12)));
+        document.write("El pago mensual que debes efectuar es de : " + pagoMensual);
+        // Juego  piensa un nº entre 1 y 100
+        var nUsuario = 0;
+        var solucion = (Math.random() * 100) + 1
+        var intentos = 0;
+        while (nUsuario != solucion) {
+            nUsuario = prompt("Adivina el número que estoy pensando entre el 1 al 100");
+            if (solucion > nUsuario) {
+                alert("El número es mayor, vuelve a intentarlo:");
+                intentos++;
+            } else if (solucion < nUsuario) {
+                alert("El número es menor, vuelve a intentarlo:");
+                intentos++;
+            } else if (solucion == nUsuario) {
+                alert("HURRA!! Has acertado, eres un crack, te ha costado " + intentos + " intentos");
+            }
+            if (contador == 10) {
+                alert("Has perdido")
+                break;
+            }
+        }
+    </script>
+</body>
+</html>
