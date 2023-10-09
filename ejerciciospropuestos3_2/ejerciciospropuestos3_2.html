@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ejercicios Propuestos 3.2</title>
 </head>
+
 <body>
     <script type="text/javascript">
         // Realizar el ejercicio de la tabla de multiplicar de manera que ahora se pida el número de la tabla a mostrar.
@@ -23,24 +25,27 @@
         document.write("El pago mensual que debes efectuar es de : " + pagoMensual);
         // Juego  piensa un nº entre 1 y 100
         var nUsuario = 0;
-        var solucion = (Math.random() * 100) + 1
+        var solucion = Math.floor(Math.random() * 100) + 1;
         var intentos = 0;
+
         while (nUsuario != solucion) {
-            nUsuario = prompt("Adivina el número que estoy pensando entre el 1 al 100");
-            if (solucion > nUsuario) {
-                alert("El número es mayor, vuelve a intentarlo:");
+            if (intentos < 10) {
+                nUsuario = parseInt(prompt("Adivina el número que estoy pensando entre el 1 al 100"));
+                if (solucion > nUsuario) {
+                    alert("El número es mayor, vuelve a intentarlo.");
+                } else if (solucion < nUsuario) {
+                    alert("El número es menor, vuelve a intentarlo.");
+                } else {
+                    alert("HURRA!! Has acertado, eres un crack, te ha costado " + (intentos + 1) + " intentos."); 
+                    break;
+                }
                 intentos++;
-            } else if (solucion < nUsuario) {
-                alert("El número es menor, vuelve a intentarlo:");
-                intentos++;
-            } else if (solucion == nUsuario) {
-                alert("HURRA!! Has acertado, eres un crack, te ha costado " + intentos + " intentos");
-            }
-            if (contador == 10) {
-                alert("Has perdido")
+            } else {
+                alert("Has agotado tus 10 intentos.");
                 break;
             }
         }
     </script>
 </body>
+
 </html>
