@@ -1,104 +1,119 @@
 function DNI() {
-    var dni = prompt('Intoduce tu DNI sin letra: ');
+    var dni = prompt('Introduce tu DNI sin letra: ');
     var letra = dni % 23;
+    var resultado = "";
+
     switch (letra) {
         case 0:
-            alert('Tu DNI es ' + dni + 'T');
+            resultado = 'Tu DNI es ' + dni + 'T';
             break;
         case 1:
-            alert('Tu DNI es ' + dni + 'R');
+            resultado = 'Tu DNI es ' + dni + 'R';
             break;
         case 2:
-            alert('Tu DNI es ' + dni + 'W');
+            resultado = 'Tu DNI es ' + dni + 'W';
             break;
         case 3:
-            alert('Tu DNI es ' + dni + 'A');
+            resultado = 'Tu DNI es ' + dni + 'A';
             break;
         case 4:
-            alert('Tu DNI es ' + dni + 'G');
+            resultado = 'Tu DNI es ' + dni + 'G';
             break;
         case 5:
-            alert('Tu DNI es ' + dni + 'M');
+            resultado = 'Tu DNI es ' + dni + 'M';
             break;
         case 6:
-            alert('Tu DNI es ' + dni + 'Y');
+            resultado = 'Tu DNI es ' + dni + 'Y';
             break;
         case 7:
-            alert('Tu DNI es ' + dni + 'F');
+            resultado = 'Tu DNI es ' + dni + 'F';
             break;
         case 8:
-            alert('Tu DNI es ' + dni + 'P');
+            resultado = 'Tu DNI es ' + dni + 'P';
             break;
         case 9:
-            alert('Tu DNI es ' + dni + 'D');
+            resultado = 'Tu DNI es ' + dni + 'D';
             break;
         case 10:
-            alert('Tu DNI es ' + dni + 'X');
+            resultado = 'Tu DNI es ' + dni + 'X';
             break;
         case 11:
-            alert('Tu DNI es ' + dni + 'B');
+            resultado = 'Tu DNI es ' + dni + 'B';
             break;
         case 12:
-            alert('Tu DNI es ' + dni + 'N');
+            resultado = 'Tu DNI es ' + dni + 'N';
             break;
         case 13:
-            alert('Tu DNI es ' + dni + 'J');
+            resultado = 'Tu DNI es ' + dni + 'J';
             break;
         case 14:
-            alert('Tu DNI es ' + dni + 'Z');
+            resultado = 'Tu DNI es ' + dni + 'Z';
             break;
         case 15:
-            alert('Tu DNI es ' + dni + 'S');
+            resultado = 'Tu DNI es ' + dni + 'S';
             break;
         case 16:
-            alert('Tu DNI es ' + dni + 'Q');
+            resultado = 'Tu DNI es ' + dni + 'Q';
             break;
         case 17:
-            alert('Tu DNI es ' + dni + 'V');
+            resultado = 'Tu DNI es ' + dni + 'V';
             break;
         case 18:
-            alert('Tu DNI es ' + dni + 'H');
+            resultado = 'Tu DNI es ' + dni + 'H';
             break;
         case 19:
-            alert('Tu DNI es ' + dni + 'L');
+            resultado = 'Tu DNI es ' + dni + 'L';
             break;
         case 20:
-            alert('Tu DNI es ' + dni + 'C');
+            resultado = 'Tu DNI es ' + dni + 'C';
             break;
         case 21:
-            alert('Tu DNI es ' + dni + 'K');
+            resultado = 'Tu DNI es ' + dni + 'K';
             break;
         case 22:
-            alert('Tu DNI es ' + dni + 'E');
+            resultado = 'Tu DNI es ' + dni + 'E';
             break;
         default:
-            alert('El número DNI introducido no es valido');
+            resultado = 'El número DNI introducido no es válido';
     }
+
+    document.getElementById("resultado").textContent = resultado;
 }
+
 function ContarPalabras() {
     var palabras = prompt('Introduce una frase: ');
     textoAreaDividido = palabras.split(" ");
     numeroPalabras = textoAreaDividido.length;
-    alert('El número de palabras que contiene la frase es: ' + numeroPalabras);
+    document.getElementById("resultado").textContent = 'El número de palabras que contiene la frase es: ' + numeroPalabras;
 }
+
 function SoloNumeros() {
     var texto = prompt('Introduce una frase: ');
+    var resultado = "";
+
     if (isNaN(texto)) {
-        alert('Esta frase no es un número');
+        resultado = 'Esta frase no es un número';
     } else {
-        alert('Es solo números');
+        resultado = 'Es solo números';
     }
+
+    document.getElementById("resultado").textContent = resultado;
 }
+
 function ContieneLetras() {
     var frase = prompt('Introduce una frase: ');
     var regex = /^[a-zA-Z\s]*$/;
+    var resultado = "";
 
     if (regex.test(frase)) {
-        alert("La cadena contiene solo letras y espacios.");
+        resultado = "La cadena contiene solo letras y espacios.";
     } else {
-        alert("La cadena contiene caracteres no permitidos.");
+        resultado = "La cadena contiene caracteres no permitidos.";
     }
+
+    document.getElementById("resultado").textContent = resultado;
 }
+
 function Right(cadena, total) {
     return cadena.slice(-total);
   }
@@ -134,3 +149,35 @@ function Right(cadena, total) {
     var resultado = Mid(frase, inicio, total);
     document.getElementById("resultado").textContent = resultado;
   }
+  function redondear() {
+    var numeroTexto = prompt("Introduce el número que quieres redondear:");
+    var numero = parseFloat(numeroTexto);
+
+    if (!isNaN(numero)) {
+        var numeroRedondeado = numero.toFixed(2);
+        document.getElementById("resultado").textContent = numeroRedondeado;
+    } else {
+        alert("Entrada no válida. Asegúrate de ingresar un número.");
+    }
+}
+
+  function crearTablaASCII() {
+    var tabla = document.getElementById('asciiTable');
+
+    for (var i = 0; i <= 15; i++) {
+        var fila = document.createElement('tr');
+        var encabezadoFila = document.createElement('th');
+        encabezadoFila.textContent = i.toString(16).toUpperCase(); // Encabezamientos de fila en hexadecimal
+        fila.appendChild(encabezadoFila);
+
+        for (var j = 0; j <= 15; j++) {
+            var celda = document.createElement('td');
+            var codigoASCII = i * 16 + j;
+            celda.textContent = codigoASCII;
+            fila.appendChild(celda);
+        }
+
+        tabla.querySelector('tbody').appendChild(fila);
+    }
+document.getElementById('crearTablaBtn').addEventListener('click', crearTablaASCII);
+}
