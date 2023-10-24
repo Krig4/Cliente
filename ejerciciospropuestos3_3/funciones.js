@@ -151,33 +151,27 @@ function Right(cadena, total) {
   }
   function redondear() {
     var numeroTexto = prompt("Introduce el número que quieres redondear:");
+    var decimales = prompt("Cuantos decimales quieres redondear");
+    var ndecimales = parseFloat(decimales);
     var numero = parseFloat(numeroTexto);
 
     if (!isNaN(numero)) {
-        var numeroRedondeado = numero.toFixed(2);
+        var numeroRedondeado = numero.toFixed(ndecimales);
         document.getElementById("resultado").textContent = numeroRedondeado;
     } else {
         alert("Entrada no válida. Asegúrate de ingresar un número.");
     }
-}
-
-  function crearTablaASCII() {
-    var tabla = document.getElementById('asciiTable');
-
-    for (var i = 0; i <= 15; i++) {
-        var fila = document.createElement('tr');
-        var encabezadoFila = document.createElement('th');
-        encabezadoFila.textContent = i.toString(16).toUpperCase(); // Encabezamientos de fila en hexadecimal
-        fila.appendChild(encabezadoFila);
-
-        for (var j = 0; j <= 15; j++) {
-            var celda = document.createElement('td');
-            var codigoASCII = i * 16 + j;
-            celda.textContent = codigoASCII;
-            fila.appendChild(celda);
-        }
-
-        tabla.querySelector('tbody').appendChild(fila);
+    function validarEmail() {
+        document.getElementById("enviarButton").addEventListener("click", function(event) {
+            var email = document.getElementById("email").value;
+            var atSymbolIndex = email.indexOf("@");
+            var dotSymbolIndex = email.lastIndexOf(".");
+        
+            if (atSymbolIndex < 1 || dotSymbolIndex < atSymbolIndex + 2 || dotSymbolIndex + 2 >= email.length) {
+                alert("Email no válido. Por favor, introduce una dirección de correo válida.");
+                event.preventDefault(); // Evita que el formulario se envíe
+            }
+        });
     }
-document.getElementById('crearTablaBtn').addEventListener('click', crearTablaASCII);
-}
+  }
+  

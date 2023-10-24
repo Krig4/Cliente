@@ -17,9 +17,61 @@
     <button onclick="extraerIzquierda()">Extraer Izquierda</button>
     <button onclick="extraerMedio()">Extraer Medio</button>
     <button onclick="redondear()">Redondear números</button>
-    <button id="crearTablaBtn">Crear Tabla Ascii</button>
     <div id="resultado"></div>
-    
+    <table>
+        <tr>
+            <th></th>
+            <th>0</th>
+            <th>1</th>
+            <th>2</th>
+            <th>3</th>
+            <th>4</th>
+            <th>5</th>
+            <th>6</th>
+            <th>7</th>
+            <th>8</th>
+            <th>9</th>
+            <th>A</th>
+            <th>B</th>
+            <th>C</th>
+            <th>D</th>
+            <th>E</th>
+            <th>F</th>
+        </tr>
+        <script>
+            for (var i = 0; i < 16; i++) {
+                document.write("<tr>");
+                document.write("<th>" + i.toString(16).toUpperCase() + "</th>");
+                for (var j = 0; j < 16; j++) {
+                    var asciiCode = i * 16 + j;
+                    document.write("<td>" + String.fromCharCode(asciiCode));
+                }
+                document.write("</tr>");
+            }
+        </script>
+    </table>
+    <hr>
+    <script>
+
+        var fotos = ['../img/RealMadrid.png', '../img/Dover.png'];
+        var Actual = 0;
+        function Siguiente() {
+            Actual = (Actual + 1) % fotos.length;
+            document.visor.src = fotos[Actual];
+        }
+    </script>
+    <div class="centrado">
+        <img src="../img/RealMadrid.png" name="visor" width="150" height="150">
+        <br>
+        <input type="button" onclick="Siguiente()" value="Siguiente"></td>
+
+    </div>
+    <hr>
+    <form onsubmit="validarEmail()">
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email">
+        <input type="submit" value="Enviar" id="enviarButton">
+    </form>
 </body>
 
 </html>
