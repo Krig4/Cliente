@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript" src="dc.js"></script>
+</head>
+<body>
+    <h1>Calculadora de Dígitos de Control</h1>
+    <label for="entidad">Entidad (4 dígitos):</label>
+    <input type="text" id="entidad" placeholder="1234" maxlength="4">
+    <br>
+    <label for="oficina">Oficina (4 dígitos):</label>
+    <input type="text" id="oficina" placeholder="5678" maxlength="4">
+    <br>
+    <label for="numeroCuenta">Número de Cuenta (10 dígitos):</label>
+    <input type="text" id="numeroCuenta" placeholder="1234567890" maxlength="10">
+    <br>
+    <button onclick="calcularDigitosControl()">Calcular Dígitos de Control</button>
+    <div id="resultado"></div>
+</body>
+</html>

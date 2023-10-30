@@ -42,3 +42,24 @@ function Meses() {
     var meses = [mesesDelAnio[0], mesesDelAnio[3], mesesDelAnio[11]];
     Print(meses);
 }
+document.addEventListener("DOMContentLoaded", function() {
+    var elementos = [];
+    
+    while (true) {
+        var valor = prompt("Introduce un valor numérico (0 para finalizar):");
+        var numero = parseFloat(valor);
+        
+        if (isNaN(numero)) {
+            alert("¡Por favor, introduce un valor numérico válido!");
+            continue;
+        }
+        
+        if (numero === 0) {
+            break;
+        }
+        
+        elementos.push(numero);
+        alert("Número de elementos introducidos: " + elementos.length);
+    }
+});
+
