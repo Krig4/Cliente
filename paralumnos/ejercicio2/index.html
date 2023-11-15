@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robots</title>
+    <script type="text/javascript" src="js.js"></script>
+    <style>
+        h1{
+            background-color: grey;
+            color:black;
+        }
+        h3{
+            color: red;
+        }
+        label{
+            color: blue;
+        }
+        body{
+            color: blue;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Los objetos de JS: Los robots de Star-Wars</h1>
+    <h3>Objetos</h3>
+    <label>Los objetos son una colección de propiedades, y una propiedad es una asociación entre un nombre (o clave) y valor. Un valor de propiedad puede ser una función, que se denomina método del objeto. En JavaScript, casi "todo" es un objeto</label>
+    <h4>Probando R2D2</h4>
+    <img src="../r2d2.jpg" height="150px">
+    <h5>Mensafono del robot</h5>
+    <script>
+        document.write(R2D2.nombre);
+        document.write("<br>");
+        document.write("Tipo de robot " + R2D2.tipo);
+        document.write("<br>");
+        document.write("Estado del robot (0/1): " + R2D2.estado);
+        document.write("<br>");
+        document.write("R2D2-> Ponte en modo espera");
+        document.write("<br>");
+        R2D2.espera();
+        document.write("<br>");
+        document.write("R2D2-> Activate");
+        document.write("<br>");
+        R2D2.activar();
+        document.write("<br>");
+        document.write("R2D2-> Ayuda");
+        document.write("<br>");
+        R2D2.ayuda();
+        document.write("<br>");
+        document.write("R2D2-> Ponte en modo espera");
+        document.write("<br>");
+        R2D2.espera();
+        document.write("<br>");
+        document.write("R2D2-> Ayuda");
+        document.write("<br>");
+        R2D2.ayuda();
+    </script>
+    <h4>Probando C3PO</h4>
+    <img src="../c3po.jpg" height="150px">
+    <h5>Mensafono del robot</h5>
+    <script>
+        document.write(C3PO.nombre);
+        document.write("<br>");
+        document.write("Tipo de robot " + C3PO.tipo);
+        document.write("<br>");
+        document.write("Estado del robot (0/1): " + C3PO.estado);
+        document.write("<br>");
+        document.write("C3PO-> Ponte en modo espera");
+        document.write("<br>");
+        C3PO.espera();
+        document.write("<br>");
+        document.write("C3PO-> Activate");
+        document.write("<br>");
+        C3PO.activar();
+        document.write("<br>");
+        document.write("C3PO-> Ayuda");
+        document.write("<br>");
+        C3PO.ayuda();
+        document.write("<br>");
+        document.write("C3PO-> Ponte en modo espera");
+        document.write("<br>");
+        C3PO.espera();
+        document.write("<br>");
+        document.write("C3PO-> Ayuda");
+        document.write("<br>");
+        C3PO.ayuda();
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla Periodica</title>
+    <script type="text/javascript" src="javascript.js"></script>
+</head>
+
+<body>
+    <h1>Elementos de la tabla periodica en ingles</h1>
+    <div>
+        <label for="symbol">Simbolo (revisa abajo):</label>
+        <input type="text" id="symbol" maxlength="2">
+        <button onclick="ShowInfo()">Obtener</button>
+    </div>
+    <div>
+        <label for="atomic">Número atómico:</label>
+        <input type="text" id="atomic" readonly="readonly">
+        <label for="element">Nombre del elemento:</label>
+        <input type="text" id="element" readonly="readonly">
+        <label for="year">Descubierto el año:</label>
+        <input type="text" id="year" readonly="readonly">
+    </div>
+    <h2>Lista de simbolos de la tabla periodica</h2>
+    <img src="../periodic-table-7-21-optimized.svg" height="340px">
+</body>
+
+</html>
