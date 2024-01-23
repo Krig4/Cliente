@@ -1,0 +1,58 @@
+function validarFormulario() {
+    let newWin = window.open("", "", "width=300, height=300");
+    newWin.document.write("<!DOCTYPE html><html><head><title>Errores</title></head><body>");
+    let surname = document.getElementById("surname");
+    let email = document.getElementById("email");
+    let numero = document.getElementById("numero");
+    let hora = document.getElementById("hora");
+    let check = document.getElementById("check");
+    let fecha = document.getElementById("fecha");
+
+    var fechaactual = fechaactual.dataset();
+    if (fecha < fechaactual) {
+        newWin.document.write("<p>La fecha de reserva tiene que ser a futuro<p>");
+        var errorfecha = document.getElementById("errorfecha");
+        errorfecha.textContent = "La fecha de reserva tiene que ser a futuro.";
+    }
+
+    var espacioBlanco = surname.value.split(' ').length - 1;
+    if (espacioBlanco !== 1) {
+        newWin.document.write("<p>Nombre separado de apellidos</p>");
+        var errorapellido = document.getElementById("errorapellido");
+        errorapellido.textContent = "Nombre separado de apellidos";
+    }
+
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email.value)) {
+        newWin.document.write("<p>Por favor, ingrese una dirección de correo electrónico válida.</p>");
+        var erroremail = document.getElementById("erroremail");
+        erroremail.textContent = "Por favor, ingrese una dirección de correo electrónico válida.";
+    }
+
+    if (numero >= 1 && numero <= 99) {
+        newWin.document.write("<p>El número de asistentes tiene que ser de 1 a 99</p>");
+        var errortel = document.getElementById("errorasistente");
+        errortel.textContent = "El número de asistentes tiene que ser de 1 a 99";
+    }
+
+    if (hora >= 8 && hora <= 21) {
+        newWin.document.write("<p>La hora escrita no es posible</p>");
+        var errorempresa = document.getElementById("errorempresa");
+        errorempresa.textContent = "La hora escrita no es posible";
+    }
+
+    if (check.value === "checkocupa") {
+        newWin.document.write("<p>Por favor, acepta las condiciones de reserva.</p>");
+        var errorcheck = document.getElementById("errorcheck");
+        errorcheck.textContent = "Por favor, acepta las condiciones de reserva.";
+    }
+    const mensaje = document.createElement("div");
+    mensaje.innerHTML = error;
+    mensaje.className = "error";
+
+    newWin.document.write("</body></html>");
+    newWin.document.close();
+}
+function Horarios() {
+    miv = window.open("infoHorarios.html","v2","top=150,left=200,width=200");
+}

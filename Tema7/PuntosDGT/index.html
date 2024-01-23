@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Consulta de Saldo de Puntos</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+<body>
+    <h1>Consulta de Saldo de Puntos</h1>
+    <form id="consultaForm">
+        <label for="nif">NIF/NIE:</label>
+        <input type="text" id="nif" required>
+        <br>
+        <label for="clave">Clave:</label>
+        <input type="password" id="clave" minlength="6" required>
+        <br>
+        <button type="button" onclick="consultarSaldo()">Entrar</button>
+    </form>
+
+    <div id="resultado"></div>
+
+    <script src="consulta.js"></script>
+
+    <form id="solicitudForm">
+        <label for="nifSolicitud">NIF/NIE:</label>
+        <input type="text" id="nifSolicitud" required>
+        <br>
+        <label for="fechaExpedicion">Fecha de expedición:</label>
+        <input type="text" id="fechaExpedicion" placeholder="15/04/2009" required>
+        <br>
+        <button type="button" onclick="solicitarClave()">Siguiente</button>
+    </form>
+    <script type="text/javascript">
+        getData();
+    </script>
+</body>
+</html>

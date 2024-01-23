@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 6-1</title>
+  <script type="text/javascript" src="js6_1.js"></script>
+  <style>
+    .celda {
+      width: 50px;
+      height: 50px;
+      border: 1px solid #000;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="contenedor">
+    <h1>Recorrido de Nodos y Agregar Elemento</h1>
+    <p>Este es un ejemplo de página HTML para recorrer y mostrar nodos con JavaScript.</p>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+  </div>
+  <button onclick="agregarElemento()">Agregar Elemento</button>
+
+  <div id="contenedor">
+    <h1>Manipulación de Texto y Enlaces</h1>
+
+    <!-- Tres párrafos con texto Lorem Ipsum y enlaces -->
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. <a href="https://www.example1.com">Enlace 1</a> Nullam
+      auctor, ligula ut pharetra rhoncus, ligula libero ultricies est, eu lacinia ipsum lectus eu metus.</p>
+
+    <p>Sed euismod mauris non orci ultricies, vitae cursus turpis finibus. Vestibulum hendrerit velit vel ligula
+      tincidunt, at interdum elit condimentum. <a href="https://www.example2.com">Enlace 2</a> Fusce sed felis at lacus
+      varius feugiat ac in felis. Fusce lacinia, justo ut tempus pellentesque, est justo varius neque, a eleifend lacus
+      orci nec mi.</p>
+
+    <p>Quisque non magna in libero pulvinar facilisis ut vel libero. <a href="https://www.example3.com">Enlace 3</a> Ut
+      aliquet, libero at efficitur vehicula, urna tortor fermentum quam, vitae fermentum arcu urna vel elit.</p>
+
+    <!-- Recuadro para mostrar información sobre enlaces -->
+    <div id="infoEnlaces"></div>
+  </div>
+</body>
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+  // Obtener todos los enlaces en la página
+  var enlaces = document.getElementsByTagName("a");
+
+  // Obtener el último enlace
+  var ultimoEnlace = enlaces[enlaces.length - 1];
+
+  // Obtener todos los enlaces que apuntan al mismo sitio que el último enlace
+  var enlacesMismoSitio = Array.from(enlaces).filter(function(enlace) {
+    return enlace.href === ultimoEnlace.href;
+  });
+
+  // Obtener el último párrafo
+  var ultimoParrafo = document.getElementsByTagName("p")[2];
+
+  // Mostrar información en el recuadro
+  var infoEnlaces = document.getElementById("infoEnlaces");
+  infoEnlaces.innerHTML = "<strong>Información de Enlaces:</strong><br>" +
+    "Número total de enlaces: " + enlaces.length + "<br>" +
+    "URL del último enlace: " + ultimoEnlace.href + "<br>" +
+    "Número de enlaces que apuntan al mismo sitio que el último enlace: " + enlacesMismoSitio.length + "<br>" +
+    "Número de enlaces en el último párrafo: " + ultimoParrafo.getElementsByTagName("a").length;
+});
+</script>
+<div id="contenedor">
+  <h>Cambio de Estilo al Azar</h>
+  <div class="celda" onclick="cambiarEstilo(this)">Celda 1</div>
+  <div class="celda" onclick="cambiarEstilo(this)">Celda 2</div>
+  <div class="celda" onclick="cambiarEstilo(this)">Celda 3</div>
+  <div class="celda" onclick="cambiarEstilo(this)">Celda 4</div>
+
+  <button onclick="cambiarEstiloAlAzar()">Cambiar Estilo al Azar</button>
+</div>
+</html>

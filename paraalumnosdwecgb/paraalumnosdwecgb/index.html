@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva</title>
+    <script src="./js.js"></script>
+    <link rel="stylesheet" href="./nueva.ttf">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <h1>Aplicación para la reserva de Combat Laser y Paint Ball</h1>
+    <fieldset>
+        <legend>Los campos marcados con "*" son obligatorios</legend>
+        <form action="index.html" method="POST" onsubmit="return validarFormulario();">
+            <div>
+                <div>
+                    <label for="email">Email* </label>
+                    <input type="email" name="email" id="email">
+                    <p id="erroremail" class="error"></p>
+                </div>
+                <div>
+                    <label for="surname">Nombre y Apellidos* </label>
+                    <input type="text" name="surname" id="surname">
+                    <p id="errorapellido" class="error"></p>
+                </div>
+                <fieldset>
+                    <legend>Datos de la reserva</legend>
+                    <>
+                        <div>
+                            <label for="numero">Nº de asistentes*</label>
+                            <input type="number" name="numero" id="numero">
+                            <p id="errorasistente" class="error"></p>
+                        </div>
+                        <div>
+                            <label for="fecha">Fecha de reserva*</label>
+                            <input type="date" name="fecha" id="fecha">
+                            <p id="errorreserva" class="error"></p>
+                        </div>
+                        <div>
+                            <label for="hora">Hora de reserva*</label>
+                            <input type="datetime" name="hora" id="hora">
+                            <a
+                                onclick="alert('Los horarios disponibles son de 08h a 21h. Especifique 2 dígitos para indicar la hora de reserva')">Horarios
+                                posibles</a>
+                            <p id="errorhora" class="error"></p>
+                        </div>
+                        <div>
+                            <label for="equipacion">Equipación</label>
+                            <select name="equipacion" id="equipacion">
+                                <option value="laser">Laser Combat Juego</option>
+                                <option value="lascelebracion">Laser Combat Celebracion</option>
+                                <option value="paint">Paint Ball</option>
+                                <option value="cumple">Paint Ball Cumpleaños Infantil</option>
+                            </select>
+                        </div>
+                        <div>
+                            <img src="./lasercombat.jpg" alt="juego-laser" height="150px">
+                        </div>
+                        <div>
+                            <input type="checkbox" name="check" id="check">
+                            <label for="check">Me comprometo a liberar la sala en caso de cancelar o posponer la
+                                reunión*</label>
+                            <p id="errorcheck" class="error"></p>
+                        </div>
+            </div>
+            <div>
+                <input type="submit" value="Enviar" onclick="">
+            </div>
+        </form>
+    </fieldset>
+    </div>
+    </fieldset>
+    <div id="errores"></div><br>
+</body>
+
+</html>

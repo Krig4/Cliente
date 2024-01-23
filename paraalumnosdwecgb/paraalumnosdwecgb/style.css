@@ -1,0 +1,12 @@
+h1{
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Nueva', sans-serif;
+}
+@font-face {
+    font-family: 'Nueva';
+    src: url('./nueva.ttf') format('opentype');
+  }
+  #errores {
+    color: red;
+}
