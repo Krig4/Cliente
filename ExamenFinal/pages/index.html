@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/index.css">
+    <script src="../modules/jquery-3.4.1.js"></script>
+    <script src="../js/functions.js"></script>
+    <script src="../js/buttons.js"></script>
+</head>
+
+<body>
+    <div class="buttons">
+        <button onclick="ConsultaShow()">Consulta</button>
+        <button onclick="AltaShow()">Alta</button>
+        <button onclick="PasswordShow()">Password</button>
+    </div>
+    <br>
+    <h1>Gestiona tu carnet joven CAM</h1>
+    <fieldset>
+        <h2>Bienvenido a la página de gestión de tu carnet joven.<br>
+            Consulta de datos.<br>
+            Introduce los campos de información necesarios para gestionar tu carnet
+        </h2>
+    </fieldset>
+    <div class="imagen"><img src="../img/tarjeta-cjmadrid.png"></div>
+    <div class="consulta">
+        <fieldset>
+            <h1>Consulta de datos</h1><br>
+            <label for="nif">Número de NIF:</label>
+            <input type="text" id="nif" name="nif" required><br>
+            <label for="clave">Código de acceso:</label>
+            <input type="password" id="clave" name="clave" required><br>
+            <button type="button" onclick="consulta()">Consultar</button>
+        </fieldset>
+    </div>
+    <div class="alta">
+        <fieldset>
+            <fieldset>
+                <h2>Todos los campos son obligatorios</h2>
+            </fieldset>
+            <label for="nif3">Número de NIF:</label>
+            <input type="text" id="nif3" name="nif3" required><br>
+            <label for="name">Nombre y Apellidos</label>
+            <input type="text" name="rName" id="rName" required><br>
+            <label for="year">Año de Nacimiento:</label>
+            <input type="number" name="year" id="year" required><br>
+            <label for="clave2">Código de acceso:</label>
+            <input type="password" id="clave2" name="clave2" required><br>
+            <button onclick="alta()">Registrarse</button>
+        </fieldset>
+    </div>
+    <div class="Password">
+        <fieldset>
+            <fieldset>
+                <h2>¿No recuerda su código de acceso?<br>
+                    Introduzca su Nif y haga click aqui
+                </h2><br>
+                <label for="nif2">Número de NIF:</label>
+                <input type="text" id="nif2" name="nif2" required><br>
+                <button type="button" onclick="password()">Recordar Clave</button>
+            </fieldset>
+        </fieldset>
+    </div>
+    <div class="resultado" id="resultado"></div>
+    <br>
+    <footer style="background-color: rgb(0, 0, 0); text-align: center; color: white;">exDWEC 2024 Carnet Joven CAM
+    </footer>
+</body>
+
+</html>

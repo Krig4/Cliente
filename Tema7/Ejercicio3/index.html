@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <script src="./modules/jquery-3.4.1.js"></script>
+    <link rel="stylesheet" href="./styles/index.css">
+    <script src="./js/index.js"></script>
+</head>
+<body>
+    <main>
+        <h3>ENTRADA</h3>
+        <hr>    
+        <form class="form">  
+            <div class="field">
+                <input type="text" id="nif" name="nif" placeholder="NIE/NIF">
+            </div>
+            <div class="field">
+                <input type="password" name="clave" id="clave" placeholder="Contraseña">
+                <button class="enter" type="button" onclick="getData()">Inicio sesión</button>
+            </div>
+    
+           
+        </form>
+        <div class="solicitud">
+            <p>¿Has olvidado tu contraseña?</p>
+            <a href="registro.html"><button>Registro</button></a>
+        </div>
+     
+    
+        <div id="resultado"></div>
+    </main>
+    </body>
+</html>

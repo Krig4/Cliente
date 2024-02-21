@@ -1,0 +1,25 @@
+body{
+    text-align: center;
+}
+.buttons{
+    text-align: left;
+}
+.form,label{
+    display:block;
+}
+.form{
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin:20px 0;
+    padding: 20px;
+}
+fieldset{
+    margin-top:15px;
+}
+.alta, .Password, .consulta
+{
+    display: none;
+}
