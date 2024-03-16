@@ -1,1 +1,8 @@
 <p>user works!</p>
+@if (isLoggedIn) {
+    <p>Bienvenido, {{ username }}</p>
+} @else {
+    <p>Inicia Sesion</p>
+    <button (click) = "isLoggedIn = true">Log In</button>
+}
+
